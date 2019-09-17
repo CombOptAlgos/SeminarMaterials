@@ -1,17 +1,18 @@
-target = chapter5
+PDF_NAME = definitions_and_theorems
 
-$(target).pdf: $(target).dvi
+$(PDF_NAME).pdf: $(PDF_NAME).dvi
 	dvipdfmx $^
-	open $@
 
-$(target).dvi: $(target).tex
+$(PDF_NAME).dvi: $(PDF_NAME).tex
 	platex $^
 
-default: clean $(target).pdf
+default: clean $(PDF_NAME).pdf
 	echo "Hello"
 
 clean:
 	rm *.log
 	rm *.aux
 	rm *.dvi
-	rm *.out
+	rm *.pdf
+	rm *.idx
+	rm *.toc
