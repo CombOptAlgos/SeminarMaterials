@@ -1,10 +1,10 @@
 PDF_NAME = definitions_and_theorems
 
-$(PDF_NAME).pdf: $(PDF_NAME).dvi
-	dvipdfmx $^
+first: $(PDF_NAME).tex
+	 docker run --rm -v $$PWD:/root/work nontan18/texlive:stable latexmk --latex=platex $^
 
-$(PDF_NAME).dvi: $(PDF_NAME).tex
-	platex $^
+auto: $(PDF_NAME).tex
+	 docker run --rm -v $$PWD:/root/work nontan18/texlive:stable latexmk --latex=platex --pvc $^
 
 default: clean $(PDF_NAME).pdf
 	echo "Hello"
@@ -14,5 +14,5 @@ clean:
 	rm *.aux
 	rm *.dvi
 	rm *.pdf
-	rm *.idx
-	rm *.toc
+	rm *.fls
+	rm *.fdb_latexmk
