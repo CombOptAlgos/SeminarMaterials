@@ -30,7 +30,7 @@ $ make new
 New directory is made and the number written in settings file is automatically updated. So you need not change settings file when you make new chapter folder.
 
 ## optional
-If you want to  use auto build mode, run the command below.
+If you want to  use auto compile  mode, run the command below.
 ```bash
 $ cd (main_directory)/theorems_and_definitions/
 $ make auto
