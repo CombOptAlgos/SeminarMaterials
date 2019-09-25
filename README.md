@@ -32,7 +32,7 @@ New directory is made and the number written in settings file is automatically u
 ## optional
 If you want to  use auto compile  mode, run the command below.
 ```bash
-$ cd (main_directory)/theorems_and_definitions/
+$ cd (main_directory)/theorems_and_definitions/chapter1
 $ make auto
 ```
 Every time you saved change on your tex file, the change is refrected to pdf file.
